@@ -1,0 +1,6 @@
+@WebAPIEntregaDos_HostAddress = http://localhost:5208
+
+GET {{WebAPIEntregaDos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
