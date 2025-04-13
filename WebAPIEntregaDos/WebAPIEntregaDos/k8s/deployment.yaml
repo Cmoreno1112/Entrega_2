@@ -1,0 +1,19 @@
+apiVersion: apps/v1           # Versión de la API de Kubernetes para un Deployment
+kind: Deployment              # Tipo de recurso que se va a crear (Deployment)
+metadata:
+  name: web-api-entrega-dos                # Nombre que tendrá el Deployment
+spec:                         # Especificación del Deployment
+  replicas: 1                 # Número de réplicas (instancias del pod que se desean correr)
+  selector:                   # Define cómo Kubernetes identificará los pods que maneja este Deployment
+    matchLabels:
+      app: web-api-entrega-dos             # Debe coincidir con las etiquetas del template de abajo
+  template:                   # Plantilla que define cómo debe crearse el pod
+    metadata:
+      labels:
+        app: web-api-entrega-dos           # Etiqueta que vincula este pod con el selector del Deployment
+    spec:                     # Especificación del pod
+      containers:
+      - name: web-api-entrega-dos          # Nombre del contenedor
+        image: cmoreno89/entregados:latest  # Imagen Docker (usa la que subiste a Docker Hub)
+        ports:
+        - containerPort: 80   # Puerto que expone el contenedor internamente

@@ -1,0 +1,13 @@
+apiVersion: v1                # Versión de la API de Kubernetes para un Service
+kind: Service                 # Tipo de recurso: Service (exponer el Deployment)
+metadata:
+  name: web-api-entrega-dos-service        # Nombre del servicio
+spec:
+  type: NodePort              # Tipo de servicio. NodePort permite exponerlo externamente en localhost
+  selector:
+    app: web-api-entrega-dos               # Debe coincidir con las etiquetas del Deployment (para vincular el servicio al pod)
+  ports:
+    - protocol: TCP           # Protocolo utilizado (normalmente TCP)
+      port: 80                # Puerto que expone el servicio dentro del clúster (puerto lógico de Kubernetes)
+      targetPort: 80          # Puerto que escucha dentro del contenedor
+      nodePort: 30080         
