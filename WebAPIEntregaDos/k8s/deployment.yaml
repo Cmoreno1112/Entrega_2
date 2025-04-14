@@ -14,6 +14,6 @@ spec:                         # Especificación del Deployment
     spec:                     # Especificación del pod
       containers:
       - name: web-api-entrega-dos          # Nombre del contenedor
-        image: cmoreno89/entregados:latest  # Imagen Docker (usa la que subiste a Docker Hub)
+        image: juanjosepp/webapi:latest  # Imagen Docker (usa la que subiste a Docker Hub)
         ports:
-        - containerPort: 80   # Puerto que expone el contenedor internamente
+        - containerPort: 8080   # Puerto que expone el contenedor internamente

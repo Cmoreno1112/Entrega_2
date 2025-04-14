@@ -9,5 +9,5 @@ spec:
   ports:
     - protocol: TCP           # Protocolo utilizado (normalmente TCP)
       port: 80                # Puerto que expone el servicio dentro del clúster (puerto lógico de Kubernetes)
-      targetPort: 80          # Puerto que escucha dentro del contenedor
+      targetPort: 8080      # Puerto que escucha dentro del contenedor
       nodePort: 30080         
